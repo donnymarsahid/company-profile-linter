@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
-import { VitePluginFonts } from 'vite-plugin-fonts';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
+import { VitePluginFonts } from "vite-plugin-fonts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,14 +9,14 @@ export default defineConfig({
     react(),
     VitePluginFonts({
       google: {
-        families: ['Manrope'],
+        families: ["Montserrat"],
       },
     }),
   ],
   resolve: {
     alias: {
       //@ts-ignore
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });

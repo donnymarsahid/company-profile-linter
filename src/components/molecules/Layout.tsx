@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   /**
@@ -17,16 +17,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', onScrollProgress);
+    window.addEventListener("scroll", onScrollProgress);
 
     return () => {
-      window.removeEventListener('scroll', onScrollProgress);
+      window.removeEventListener("scroll", onScrollProgress);
     };
   }, []);
 
   const inlineStyle = {
-    height: '4px',
-    background: '#4C1D95',
+    height: "4px",
+    background: "#4C1D95",
     width: `${scroll}%`,
   };
 

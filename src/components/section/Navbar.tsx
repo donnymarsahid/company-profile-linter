@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Logo from '@/assets/logo.svg';
-import Hamburger from '@/assets/hamburger.svg';
-import { styles } from '@/css/styles';
-import useWidth from '@/hooks/useWidth';
-import Drawer from 'react-modern-drawer';
+import React, { useEffect, useState } from "react";
+import Logo from "@/assets/logo.png";
+import Hamburger from "@/assets/hamburger.svg";
+import { styles } from "@/css/styles";
+import useWidth from "@/hooks/useWidth";
+import Drawer from "react-modern-drawer";
 
-import 'react-modern-drawer/dist/index.css';
+import "react-modern-drawer/dist/index.css";
 
 const Navbar = () => {
   /*
@@ -22,9 +22,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   });
 
@@ -49,11 +49,7 @@ const Navbar = () => {
   }, [width]);
 
   return (
-    <nav
-      className={`bg-white bg-opacity-20 backdrop-blur-md sticky z-50 top-0  transition-shadow ${
-        +onTop ? '' : 'shadow-sm'
-      }`}
-    >
+    <nav className={`bg-white bg-opacity-20 backdrop-blur-md sticky z-50 top-0  transition-shadow ${+onTop ? "" : "shadow-sm"}`}>
       <Drawer open={open} onClose={toggleDrawer} direction="left">
         <div className="flex flex-col mt-2" onClick={() => SetIsOpen(false)}>
           <img src={Logo} width={100} />
@@ -61,63 +57,41 @@ const Navbar = () => {
             <a className="text-underline whitespace-nowrap ml-1" href="#home">
               Home
             </a>
-            <a
-              className="text-underline whitespace-nowrap ml-1"
-              href="#learning"
-            >
+            <a className="text-underline whitespace-nowrap ml-1" href="#learning">
               Learnings
             </a>
             <a className="text-underline whitespace-nowrap ml-1" href="#about">
               About Us
             </a>
-            <a
-              className="text-underline whitespace-nowrap ml-1"
-              href="#testimonial"
-            >
+            <a className="text-underline whitespace-nowrap ml-1" href="#testimonial">
               Testimonial
             </a>
           </div>
         </div>
-        <div className="flex flex-col border bottom-1 mt-2 gap-y-2">
-          <button className="text-purple-brand  ml-1 text-left">Login</button>
-          <button className="bg-purple-brand pl-1 text-white h-[30px] text-left">
-            Sign Up
-          </button>
-        </div>
       </Drawer>
-      <div className={`${styles['main-container']}} m-auto`}>
-        <div className="flex items-center justify-between sm:h-[100px] h-[70px]  text-xl font-semibold">
-          <div className="flex items-center">
-            <img src={Logo} width={100} />
+      <div className={`${styles["main-container"]}} m-auto`}>
+        <div className="sm:h-[100px] h-[70px] text-md font-semibold">
+          <div className="flex justify-between h-full">
+            <div className="flex items-center">
+              <img src={Logo} width={130} />
+            </div>
             <div className="md:flex items-center ml-[70px] gap-x-10  text-[#394360] hidden">
               <a className="text-underline whitespace-nowrap" href="#home">
                 Home
               </a>
               <a className="text-underline whitespace-nowrap" href="#learning">
-                Learnings
+                Services
               </a>
               <a className="text-underline whitespace-nowrap" href="#about">
                 About Us
               </a>
-              <a
-                className="text-underline whitespace-nowrap"
-                href="#testimonial"
-              >
+              <a className="text-underline whitespace-nowrap" href="#testimonial">
                 Testimonial
               </a>
             </div>
           </div>
-          <div className="lg:flex gap-x-[42px] hidden">
-            <button className="text-purple-brand">Login</button>
-            <button className="bg-purple-brand text-white px-4 h-[52px] rounded-lg whitespace-nowrap">
-              Sign Up
-            </button>
-          </div>
-          <img
-            src={Hamburger}
-            className="md:hidden cursor-pointer"
-            onClick={toggleSidebar}
-          />
+          <div className="lg:flex gap-x-[42px] hidden"></div>
+          <img src={Hamburger} className="md:hidden cursor-pointer" onClick={toggleSidebar} />
         </div>
       </div>
     </nav>
